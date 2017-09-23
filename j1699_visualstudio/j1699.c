@@ -480,6 +480,7 @@ int main(int argc, char **argv)
 		     "    1. Run Static  Tests contained in Sections 5  through 9.\n"
 		     "    2. Run Dynamic Tests contained in Sections 10 through 11.\n"
 		     "Enter choice (1 or 2): ");
+		fflush(stdout);
 		scanf  ("%d", &nTestChoice);
 		Log( BLANK, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "\n");
 	} while (nTestChoice < 1 || nTestChoice > 2);
