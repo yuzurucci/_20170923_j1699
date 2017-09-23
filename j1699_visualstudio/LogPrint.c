@@ -340,7 +340,7 @@ char Log( LOGTYPE LogType, SCREENOUTPUT ScreenOutput, LOGOUTPUT LogOutput, PROMP
 				// If Enabled, Print to the Screen
 				if ( (ScreenOutput == SCREENOUTPUTON) && (gSuspendScreenOutput == FALSE) )
 				{
-					printf ( "\n%s", PrintBuffer );
+					printf ( "\n%s\n", PrintBuffer );
 				}
 
 				UserResponse[0] = 'Y';
