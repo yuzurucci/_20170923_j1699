@@ -84,8 +84,8 @@ STATUS DetermineProtocol(void)
 
 	/* Get the version information and log it */
 	
-	if (LogJ2534InterfaceVersion() != PASS)
-	{
+	//if (LogJ2534InterfaceVersion() != PASS)
+	//{
 		/* If routine logged an error, pass error up! */
 		//return (FAIL);
 	//}
