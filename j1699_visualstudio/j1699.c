@@ -432,6 +432,10 @@ int main(int argc, char **argv)
 
 	gLastLogTime = GetTickCount();	/* Get the start time for the log file */
 
+	/* test  */
+	printf("what is your birth month?\n");
+	fflush(stdout);
+
 	/* Send out the banner */
 	printf (gBanner);
 	fflush(stdout);
