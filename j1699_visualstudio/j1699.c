@@ -434,6 +434,7 @@ int main(int argc, char **argv)
 
 	/* Send out the banner */
 	printf (gBanner);
+	fflush(stdout);
 
 	/* open temp log file */
 	if (OpenTempLogFile () != PASS)
