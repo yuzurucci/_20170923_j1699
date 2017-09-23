@@ -1,0 +1,31 @@
++000015ms INFORMATION: Sat Sep 23 11:42:35 2017
+
+
++000016ms INFORMATION: **** LOG FILENAME 2001-Honda-Fit-1.log ****
++000000ms INFORMATION: **** SAE J1699-3 Build Revision 16.00.01  (Build Date: Sep 23 2017) ****
+
++000000ms INFORMATION: **** NOTE: Timestamp on left is from the PC ****
++000016ms INFORMATION: **** NOTE: Timestamp with messages is from the J2534 interface ****
+
++000000ms INFORMATION: Windows NT/2K/XP (1DB10106)
+
+
+
+
+
+
+
+
+
+
++009001ms PROMPT: (Q13) Disable Tester Present Messages for ISO15765 vehicles?
+(All other protocols will send Tester Present Messages regardless
+of the response to this prompt)   (Enter Yes or No):  Yes
+
++000000ms INFORMATION: Model Year of this vehicle? 2001
++000000ms INFORMATION: How many OBD-II ECUs are on this vehicle (1 to 8)?  3
++000000ms INFORMATION: How many reprogrammable OBD-II ECUs are on this vehicle (1 to 8)?  3
++000015ms INFORMATION: What type of engine is in this vehicle?  GASOLINE
++000000ms INFORMATION: What type of powertrain is in this vehicle?  STOP/START
++000000ms INFORMATION: What type of vehicle is being tested?  LIGHT/MEDIUM DUTY VEHICLE
++000000ms INFORMATION: What type of compliance test is to be performed?  US OBD II

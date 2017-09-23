@@ -444,14 +444,17 @@ int main(int argc, char **argv)
 	}
 
 	/* Find the J2534 interface and attach to the DLL */
+	/*
 	if (FindJ2534Interface() != PASS)
 	{
 		Log( FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 		     "J2534 interface not found\n");
 		exit (FAIL);
 	}
+	*/
 
 	/* Open J2534 device */
+	/*
 	{
 		unsigned long RetVal = PassThruOpen (NULL, &gulDeviceID);
 		if (RetVal != STATUS_NOERROR)
@@ -461,7 +464,8 @@ int main(int argc, char **argv)
 			exit (FAIL);
 		}
 	}
-
+	*/
+	
 	/* Get user input to determine which test to run */
 	do
 	{
@@ -604,7 +608,7 @@ int main(int argc, char **argv)
 			gOBDPlugInFlag = TRUE;
 			break;
 	}
-
+	printf("finished untile power train check.");
 
 	/* Ask the user for the type of compliance test to be run */
 	while ((nOBDType < 1) || (nOBDType > COMPLIANCE_TEST_LIST_COUNT))
@@ -900,7 +904,7 @@ int main(int argc, char **argv)
 	LogStats();
 	StopTest (RetCode, TestPhase);
 
-	return RetCode;
+	return RetCode;//
 }
 
 /*
