@@ -15,6 +15,31 @@ for num in range(1,45):
     current_sentense = p.stdout.readline()
     if_enter = ("Enter" in current_sentense)
     print current_sentense + "one sentense finished. " + str(len(current_sentense)) + " " + str(if_enter)
+    if if_enter:
+            break
+#print "exited from for loop."
+p.stdin.write("1\n")
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+print p.stdout.readline()
+
 """
 print "found Enter choise."
 print p.stdout.readline()

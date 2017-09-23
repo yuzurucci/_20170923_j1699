@@ -483,6 +483,7 @@ int main(int argc, char **argv)
 		fflush(stdout);
 		scanf  ("%d", &nTestChoice);
 		Log( BLANK, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "\n");
+		fflush(stdout);
 	} while (nTestChoice < 1 || nTestChoice > 2);
 
 
@@ -496,6 +497,7 @@ int main(int argc, char **argv)
 		Log( PROMPT, SCREENOUTPUTON, LOGOUTPUTOFF, CUSTOM_PROMPT,
 		     "(Q03) Enter model year of vehicle (%d to %d): ", MIN_MODEL_YEAR, MAX_MODEL_YEAR);
 		gets (gUserModelYear);
+		fflush(stdout); 
 		Log( BLANK, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "\n");
 		gModelYear = atoi(gUserModelYear);
 	} while ( gModelYear < MIN_MODEL_YEAR || gModelYear > MAX_MODEL_YEAR );
