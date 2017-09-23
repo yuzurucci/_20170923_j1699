@@ -47,7 +47,74 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="2001-Honda-Fit-1.log" />
     <None Include="App.config" />
+    <None Include="ChangeLog" />
+    <None Include="j162BD8.tmp" />
+    <None Include="J1699 User Notes.doc" />
+    <None Include="J1699-3 Work Status.xls" />
+    <None Include="j1699.ncb" />
+    <None Include="j1699.opt" />
+    <None Include="j1699.plg" />
+    <None Include="LICENSE" />
+    <None Include="LogFileFormat.doc" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckMILLight.c" />
+    <Content Include="ClearCodes.c" />
+    <Content Include="ConnectProtocol.c" />
+    <Content Include="DetermineProtocol.c" />
+    <Content Include="DisconnectProtocol.c" />
+    <Content Include="FindJ2534Interface.c" />
+    <Content Include="InitProtocolList.c" />
+    <Content Include="IsDTCPending.c" />
+    <Content Include="IsDTCStored.c" />
+    <Content Include="j1699.c" />
+    <Content Include="j1699.dsp" />
+    <Content Include="j1699.dsw" />
+    <Content Include="j1699.exe" />
+    <Content Include="j1699.h" />
+    <Content Include="j2534.h" />
+    <Content Include="LogMsg.c" />
+    <Content Include="LogPrint.c" />
+    <Content Include="object.txt" />
+    <Content Include="README.txt" />
+    <Content Include="ScreenOutput.c" />
+    <Content Include="ScreenOutput.h" />
+    <Content Include="SidRequest.c" />
+    <Content Include="SidResetResponseData.c" />
+    <Content Include="SidSaveResponseData.c" />
+    <Content Include="StopTest.c" />
+    <Content Include="TestToVerifyInUseCounters.c" />
+    <Content Include="TestToVerifyPerformanceCounters.c" />
+    <Content Include="TestToVerifyPermanentCodes.c" />
+    <Content Include="TestWithConfirmedDtc.c" />
+    <Content Include="TestWithFaultRepaired.c" />
+    <Content Include="TestWithNoDtc.c" />
+    <Content Include="TestWithNoFaultAfter3DriveCycles.c" />
+    <Content Include="TestWithPendingDtc.c" />
+    <Content Include="VerifyControlSupportAndData.c" />
+    <Content Include="VerifyDiagnosticBurstSupport.c" />
+    <Content Include="VerifyDiagnosticSupportAndData.c" />
+    <Content Include="VerifyDTCPendingData.c" />
+    <Content Include="VerifyDTCStoredData.c" />
+    <Content Include="VerifyFreezeFrameSupportAndData.c" />
+    <Content Include="VerifyGroupControlSupport.c" />
+    <Content Include="VerifyGroupDiagnosticSupport.c" />
+    <Content Include="VerifyGroupFreezeFrameSupport.c" />
+    <Content Include="VerifyGroupMonitorTestSupport.c" />
+    <Content Include="VerifyGroupVehicleInformationSupport.c" />
+    <Content Include="VerifyLinkActive.c" />
+    <Content Include="VerifyMILData.c" />
+    <Content Include="VerifyMonitorTestSupportAndResults.c" />
+    <Content Include="VerifyO2TestResults.c" />
+    <Content Include="VerifyPermanentCodeSupport.c" />
+    <Content Include="VerifyReservedServices.c" />
+    <Content Include="VerifyReverseGroupDiagnosticSupport.c" />
+    <Content Include="VerifyReverseOrderSupport.c" />
+    <Content Include="VerifyVehicleInformationSupportAndData.c" />
+    <Content Include="VerifyVehicleState.c" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

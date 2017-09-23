@@ -83,13 +83,13 @@ STATUS DetermineProtocol(void)
 	unsigned long fOBDFound = FALSE;
 
 	/* Get the version information and log it */
-	/*
+	
 	if (LogJ2534InterfaceVersion() != PASS)
 	{
 		/* If routine logged an error, pass error up! */
-		return (FAIL);
-	}
-	*/
+		//return (FAIL);
+	//}
+	
 
 	/* Check if battery is within a resonable range */
 	if ( VerifyBatteryVoltage () == FAIL)
