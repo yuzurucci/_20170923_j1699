@@ -119,6 +119,7 @@ STATUS TestWithNoDtc(void)
 	bSubTestFailed = FALSE;
 	Log( SUBSECTION_BEGIN, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 	     "(Clear DTCs (Service $04), Engine Off)");
+	/*
 	if ( ClearCodes() != PASS )
 	{
 		bSubTestFailed = TRUE;
@@ -140,7 +141,8 @@ STATUS TestWithNoDtc(void)
 	{
 		Log( SUBSECTION_PASSED_RESULT, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "");
 	}
-
+	*/
+	Log(SUBSECTION_PASSED_RESULT, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "");
 
 //*******************************************************************************
 	/* Verify MIL and DTC status is cleared */
