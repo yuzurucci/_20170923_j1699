@@ -1,0 +1,14 @@
+
+
+
+
+
+
+
+
+
+
++001810ms PROMPT: (Q13) Disable Tester Present Messages for ISO15765 vehicles?
+(All other protocols will send Tester Present Messages regardless
+of the response to this prompt)   (Enter Yes or No):  Yes
+
