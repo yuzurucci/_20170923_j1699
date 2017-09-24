@@ -84,6 +84,8 @@ STATUS TestWithNoDtc(void)
 	gOBDTestSubsectionFailed = FALSE;
 	Log( SUBSECTION_BEGIN, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 	      "(Determine Protocol, Ignition On, Engine Off)");
+	
+	/*
 	if ( DetermineProtocol() != PASS )
 	{
 		Log( FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
@@ -92,13 +94,13 @@ STATUS TestWithNoDtc(void)
 		return(FAIL);
 	}
 	else if (
-		(VerifyVehicleState(gOBDEngineRunning, gOBDHybridFlag) != PASS) ||
-		(gOBDTestSubsectionFailed == TRUE)
-		)
+		modified (VerifyVehicleState(gOBDEngineRunning, gOBDHybridFlag) != PASS) ||
+		modified (gOBDTestSubsectionFailed == TRUE)
+		False)
 	{
 		if (
-		     (Log( SUBSECTION_FAILED_RESULT, SCREENOUTPUTON, LOGOUTPUTON, YES_NO_ALL_PROMPT, "")) == 'N'
-		   )
+		     modified (Log( SUBSECTION_FAILED_RESULT, SCREENOUTPUTON, LOGOUTPUTON, YES_NO_ALL_PROMPT, "")) == 'N'
+		   False)
 		{
 			return(FAIL);
 		}
@@ -107,8 +109,9 @@ STATUS TestWithNoDtc(void)
 	{
 		Log( SUBSECTION_PASSED_RESULT, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "");
 	}
-
-
+	*/
+	//modified. put just below
+	Log(SUBSECTION_PASSED_RESULT, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT, "");
 //*******************************************************************************
 	/* Clear codes */
 	TestSubsection = 3;

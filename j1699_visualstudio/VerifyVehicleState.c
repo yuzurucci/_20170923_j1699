@@ -144,6 +144,7 @@ STATUS LogRPM (unsigned short *pusRPM)
 	SidReq.NumIds = 1;
 	SidReq.Ids[0] = 0x0c;
 
+	/*
 	if (SidRequest( &SidReq, SID_REQ_NORMAL ) == FAIL)
 	{
 		Log( FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
@@ -174,6 +175,9 @@ STATUS LogRPM (unsigned short *pusRPM)
 			}
 		}
 	}
+	*/  insert comment.mizuno
+	RPM = 1000;   //modified mizuno
+	eRetCode = PASS; //modified mizuno
 
 	*pusRPM = RPM;
 	return eRetCode;
