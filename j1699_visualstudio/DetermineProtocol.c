@@ -96,11 +96,13 @@ STATUS DetermineProtocol(void)
 	{
 		return (FAIL);
 	}
+	printf("passsed  VerifyBatteryVoltage.\n");
 
 	/* If already connected to a protocol, disconnect first */
 	if (gOBDDetermined == TRUE)
 	{
 		DisconnectProtocol();
+		printf("after DisconnectProtocol. \n");
 		gOBDDetermined = FALSE;
 
 		/* Close J2534 device */
@@ -397,7 +399,7 @@ STATUS VerifyBatteryVoltage (void)
 	/* Check if battery is within a resonable range */
 	//RetVal = PassThruIoctl (gulDeviceID, READ_VBATT, NULL, &BatteryVoltage);
 	RetVal = STATUS_NOERROR; //modified.
-	BatteryVoltage = 12.3; // added.
+	BatteryVoltage = 12300; // added.
 	if (RetVal != STATUS_NOERROR)
 	{
 		/* account for non-compliant J2534-1 devices that don't support READ_VBATT */

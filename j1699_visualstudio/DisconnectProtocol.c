@@ -52,7 +52,8 @@ STATUS DisconnectProtocol(void)
 	STATUS RetCode = PASS;
 
 	/* Turn off all filters and periodic messages before disconnecting */
-	RetVal = PassThruIoctl (gOBDList[gOBDListIndex].ChannelID, CLEAR_MSG_FILTERS, NULL, NULL);
+	//RetVal = PassThruIoctl (gOBDList[gOBDListIndex].ChannelID, CLEAR_MSG_FILTERS, NULL, NULL); //modified.
+	RetVal = STATUS_NOERROR;
 	if (RetVal != STATUS_NOERROR)
 	{
 		// If determining protocol,

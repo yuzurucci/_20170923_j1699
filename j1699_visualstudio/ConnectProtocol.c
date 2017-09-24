@@ -62,6 +62,7 @@ STATUS ConnectProtocol(void)
 	unsigned long EcuIndex;
 	unsigned long InitFlags;
 
+	printf("ConnectProtocol was called.\n");
 	/* Set the request delay, maximum response time and init flags according to the protocol */
 	InitFlags = 0;
 	if (gOBDList[gOBDListIndex].Protocol == ISO15765)
