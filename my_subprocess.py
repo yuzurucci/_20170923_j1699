@@ -107,8 +107,8 @@ for num in range(1,20):
     print current_sentense 
     if if_enter:
             break
-p.stdin.write("1\n") #Q13
-print "1 ??"
+p.stdin.write("Yes\n") #Q13
+print "Yes"
 
 for num in range(1,20):
     current_sentense = p.stdout.readline()
@@ -126,8 +126,70 @@ for num in range(1,20):
     if if_enter:
             break
 p.stdin.write("1\n")
-print "1"
+print "2"
 
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("1\n")
+print "Yuzuru"
+
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("\n")
+print "4 did Enter"
+
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("5 \n")
+print "5 did enter"
+
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("Yes\n")
+print "6 Yes"
+
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("7\n")
+print "7"
+
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("8\n")
+print "8"
+
+for num in range(1,20):
+    current_sentense = p.stdout.readline()
+    if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
+    print current_sentense 
+    if if_enter:
+            break
+p.stdin.write("9\n")
+print "9"
 
 
 
