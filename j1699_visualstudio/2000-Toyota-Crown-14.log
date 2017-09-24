@@ -1,0 +1,51 @@
++000016ms INFORMATION: Sun Sep 24 12:47:18 2017
+
+
++000000ms INFORMATION: **** LOG FILENAME 2000-Toyota-Crown-14.log ****
++000000ms INFORMATION: **** SAE J1699-3 Build Revision 16.00.01  (Build Date: Sep 24 2017) ****
+
++000000ms INFORMATION: **** NOTE: Timestamp on left is from the PC ****
++000000ms INFORMATION: **** NOTE: Timestamp with messages is from the J2534 interface ****
+
++000000ms INFORMATION: Windows NT/2K/XP (1DB10106)
+
+
+
+
+
+
+
+
+
+
++000016ms PROMPT: (Q13) Disable Tester Present Messages for ISO15765 vehicles?
+(All other protocols will send Tester Present Messages regardless
+of the response to this prompt)   (Enter Yes or No):  Yes
+
++000000ms INFORMATION: Model Year of this vehicle? 2000
++000000ms INFORMATION: How many OBD-II ECUs are on this vehicle (1 to 8)?  1
++000000ms INFORMATION: How many reprogrammable OBD-II ECUs are on this vehicle (1 to 8)?  1
++000000ms INFORMATION: What type of engine is in this vehicle?  GASOLINE
++000000ms INFORMATION: What type of powertrain is in this vehicle?  CONVENTIONAL
++000000ms INFORMATION: What type of vehicle is being tested?  LIGHT/MEDIUM DUTY VEHICLE
++000000ms INFORMATION: What type of compliance test is to be performed?  US OBD II
+
++000046ms PROMPT: (Q12) Enter your name and/or contact information (optional)  (Press Enter to continue):  1
+
++000000ms TEST: **** Test 5.1 (MIL bulb check, Engine Off, No DTC set) ****
+
++000000ms PROMPT: Turn key OFF for 30 seconds or longer, as appropriate for the ECU.
+ (Press Enter to continue):  1
+
+
++000032ms PROMPT: Turn key ON with engine OFF. Do not crank engine.
+ (Press Enter to continue):  1
+
+
++000031ms PROMPT: Was the MIL ON for at least 15 seconds? (Enter Yes or No):  Yes
+
++000000ms RESULTS: **** Test 5.1 PASSED ****
+
++000000ms TEST: **** Test 5.2 (Determine Protocol, Ignition On, Engine Off) ****
++000000ms INFORMATION: Battery = 12.300V
++000000ms INFORMATION: Checking for OBD on J1850PWM protocol

@@ -117,14 +117,17 @@ STATUS ConnectProtocol(void)
 	ConfigList.ConfigPtr = &ConfigParameter;
 	ConfigParameter.Parameter = LOOPBACK;
 	ConfigParameter.Value = 1;
-	RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, SET_CONFIG, &ConfigList, NULL);
+	//modified RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, SET_CONFIG, &ConfigList, NULL);
+	RetVal = STATUS_NOERROR; //modified.
 	if (RetVal != STATUS_NOERROR)
 	{
 		Log( J2534_FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 		     "%s returned %ld", "PassThruIoctl(LOOPBACK)", RetVal);
 		return(FAIL);
 	}
-
+	printf("pass thru 2nd PassThruIoctl. \n");
+	//printf("index protocol is %s\n", gOBDList[gOBDListIndex].Protocol);
+	gOBDList[gOBDListIndex].Protocol = ISO9141;
 	/* Setup the node IDs, functional message ID and filter(s) based on protocol */
 	switch(gOBDList[gOBDListIndex].Protocol)
 	{
@@ -135,13 +138,15 @@ STATUS ConnectProtocol(void)
 			ConfigList.ConfigPtr = &ConfigParameter;
 			ConfigParameter.Parameter = W4;
 			ConfigParameter.Value = 40;
-			RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, SET_CONFIG, &ConfigList, NULL);
+			//modified RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, SET_CONFIG, &ConfigList, NULL);
+			RetVal = STATUS_NOERROR;
 			if (RetVal != STATUS_NOERROR)
 			{
 				Log( J2534_FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 				     "%s returned %ld", "PassThruIoctl(W4)", RetVal);
 				return(FAIL);
 			}
+			printf("pass thru 3rd PassThruIoctl.\n");
 
 			/* Five baud initialization */
 			InputData.NumOfBytes = 1;
@@ -149,9 +154,11 @@ STATUS ConnectProtocol(void)
 			OutputData.NumOfBytes = sizeof(gOBDKeywords);
 			OutputData.BytePtr = gOBDKeywords;
 			InputBytes[0] = 0x33;
-			RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, FIVE_BAUD_INIT, &InputData, &OutputData);
+			//modified RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, FIVE_BAUD_INIT, &InputData, &OutputData);
+			RetVal == STATUS_NOERROR;
 			if (RetVal == STATUS_NOERROR)
 			{
+				printf("inside. \n");
 				if ((gOBDKeywords[0] != 0) || (gOBDKeywords[1] != 0))
 				{
 					Log( INFORMATION, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
@@ -181,6 +188,7 @@ STATUS ConnectProtocol(void)
 		/* ISO9141 case falls through to J1850VPW to setup same message filter */
 		case J1850VPW:
 		{
+			printf ("inside case J1850VPW\n");
 			/* Setup pass filter to read only OBD requests / responses */
 			MaskMsg.ProtocolID = gOBDList[gOBDListIndex].Protocol;
 			MaskMsg.TxFlags = 0;
@@ -194,8 +202,9 @@ STATUS ConnectProtocol(void)
 			PatternMsg.Data[0] = 0x00;
 			PatternMsg.Data[1] = 0x6A;
 			PatternMsg.Data[2] = 0x00;
-			RetVal = PassThruStartMsgFilter(gOBDList[gOBDListIndex].ChannelID,
-			PASS_FILTER, &MaskMsg, &PatternMsg, NULL, &gOBDList[gOBDListIndex].FilterID);
+			//modified RetVal = PassThruStartMsgFilter(gOBDList[gOBDListIndex].ChannelID,
+			//modified PASS_FILTER, &MaskMsg, &PatternMsg, NULL, &gOBDList[gOBDListIndex].FilterID);
+			RetVal = STATUS_NOERROR;
 			if (RetVal != STATUS_NOERROR)
 			{
 				Log( J2534_FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
@@ -212,16 +221,21 @@ STATUS ConnectProtocol(void)
 			gTesterPresentMsg.Data[2] = TESTER_NODE_ADDRESS;
 			gTesterPresentMsg.Data[3] = 0x01;
 			gTesterPresentMsg.Data[4] = 0x00;
+			printf("finished J1850VPW\n");
 		}
 		break;
+		printf("after break of J1850. \n");
+
 		case J1850PWM:
 		{
+			printf("case J1850PWM \n");
 			/* Setup node ID */
 			ConfigList.NumOfParams = 1;
 			ConfigList.ConfigPtr = &ConfigParameter;
 			ConfigParameter.Parameter = NODE_ADDRESS;
 			ConfigParameter.Value = TESTER_NODE_ADDRESS;
-			RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, SET_CONFIG, &ConfigList, NULL);
+			//modified RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, SET_CONFIG, &ConfigList, NULL);
+			RetVal = STATUS_NOERROR;
 			if (RetVal != STATUS_NOERROR)
 			{
 				Log( J2534_FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
@@ -233,14 +247,15 @@ STATUS ConnectProtocol(void)
 			InputData.NumOfBytes = 1;
 			InputData.BytePtr = InputBytes;
 			InputBytes[0] = 0x6B;
-			RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, ADD_TO_FUNCT_MSG_LOOKUP_TABLE, &InputData, NULL);
+			//modified RetVal = PassThruIoctl(gOBDList[gOBDListIndex].ChannelID, ADD_TO_FUNCT_MSG_LOOKUP_TABLE, &InputData, NULL);
+			RetVal = STATUS_NOERROR;
 			if (RetVal != STATUS_NOERROR)
 			{
 				Log( J2534_FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 				     "%s returned %ld", "PassThruIoctl(ADD_TO_FUNC_MSG_LOOKUP_TABLE)", RetVal);
 				return(FAIL);
 			}
-
+			printf("passed J2534_FAILURE check. \n");
 			/* Setup pass filter to read only OBD requests / responses */
 			MaskMsg.ProtocolID = gOBDList[gOBDListIndex].Protocol;
 			MaskMsg.TxFlags = 0;
@@ -522,11 +537,14 @@ STATUS ConnectProtocol(void)
 			gTesterPresentMsg.Data[5] = 0x00;
 		}
 		break;
+		printf("after break of 15765.\n");
 		default:
 		{
 			return(FAIL);
 		}
+		
 	}
+	printf("before return pass.\n");
 	return(PASS);
 }
 

@@ -186,10 +186,10 @@ for num in range(1,20):
     current_sentense = p.stdout.readline()
     if_enter = ("Enter" in current_sentense)or("How many" in current_sentense)
     print current_sentense 
-    if if_enter:
-            break
-p.stdin.write("9\n")
-print "9"
+    #if if_enter:
+    #        break
+#p.stdin.write("1\n")
+#print "1"
 
 
 

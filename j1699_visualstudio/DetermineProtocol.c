@@ -102,7 +102,7 @@ STATUS DetermineProtocol(void)
 	if (gOBDDetermined == TRUE)
 	{
 		DisconnectProtocol();
-		printf("after DisconnectProtocol. \n");
+		printf("after DisconnectProtocol\n");
 		gOBDDetermined = FALSE;
 
 		/* Close J2534 device */
@@ -146,13 +146,14 @@ STATUS DetermineProtocol(void)
 		{
 			gOBDListIndex  = gOBDFoundIndex;
 			gOBDDetermined = TRUE;
+			printf("before calling ConnectProtocol. \n");
 			if (ConnectProtocol() != PASS)
 			{
 				Log( FAILURE, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
 				     "Connect to protocol failed\n");
 				return (FAIL);
 			}
-
+			printf("passed first ConnectProtorocl. in DetermineProtocol.c.");
 			if ( (gUserInput.eComplianceType == US_OBDII ||
 			      gUserInput.eComplianceType == HD_OBD) &&
 			     gModelYear >= 2008 &&
@@ -247,8 +248,11 @@ STATUS IDOBDProtocol (unsigned long *pfOBDFound)
 			RetVal = SearchTAfor29bit();
 		}
 
+		printf("Am I calling ConnectProtocol below ? \n");
+
 		if ( RetVal == PASS && ConnectProtocol() == PASS )
 		{
+			printf("returned here ? \n");
 			do
 			{
 				/* Check if SID 1 PID 0 supported */
