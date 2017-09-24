@@ -91,7 +91,8 @@ STATUS ConnectProtocol(void)
 	}
 
 	/* Connect to protocol */
-	RetVal = PassThruConnect (gulDeviceID, gOBDList[gOBDListIndex].Protocol, InitFlags, gOBDList[gOBDListIndex].BaudRate, &gOBDList[gOBDListIndex].ChannelID);
+	//modified RetVal = PassThruConnect (gulDeviceID, gOBDList[gOBDListIndex].Protocol, InitFlags, gOBDList[gOBDListIndex].BaudRate, &gOBDList[gOBDListIndex].ChannelID);
+	RetVal = STATUS_NOERROR;
 	if ((RetVal != STATUS_NOERROR) && (gOBDList[gOBDListIndex].Protocol == ISO9141))
 	{
 		Log( WARNING, SCREENOUTPUTON, LOGOUTPUTON, NO_PROMPT,
@@ -109,6 +110,7 @@ STATUS ConnectProtocol(void)
 		     "%s returned %ld", "PassThruConnect", RetVal);
 		return (FAIL);
 	}
+	printf("passed over Connect to protocol in ConnectProtocol.c .\n");
 
 	/* Turn on LOOPBACK to see transmitted messages */
 	ConfigList.NumOfParams = 1;
